@@ -12,6 +12,9 @@ RUN python3 -m pip install jupyterhub
 
 RUN python3 -m pip install --upgrade notebook
 
+COPY config.py config.py
+
 EXPOSE 8000
 
-CMD ["jupyterhub"]
+CMD ["jupyterhub", "-f", "config.py"]
+
